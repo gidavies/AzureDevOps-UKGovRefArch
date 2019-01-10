@@ -52,7 +52,7 @@ For now this is a pure infrastructure deployment, without an application, and th
 <img src="images/S4_2.jpg" width="624"/>
 3. Select Empty Job (i.e. don't use a template):
 <img src="images/S4_3.jpg" width="624"/>
-4. Name the default stage and click the close button. This will be the first environment that you create and provision, so you might want to call this sandbox, dev, test or something similar. Later we'll all a production environment:
+4. Name the default stage and click the close button. This will be the first environment that you create and provision, so you might want to call this sandbox, dev, test or something similar. Later we'll add another (e.g. production) environment:
 <img src="images/S4_4.jpg" width="624"/>
 5. Rename the release pipeline to something more meaningful to you e.g. UKIaaSWeb.Pipeline
 <img src="images/S4_5.jpg" width="624"/>
@@ -94,7 +94,7 @@ When the release pipeline is triggered it will then execute a series of tasks. W
 4. Provide a resource group. We'll create a new resource group and use a variable (for reuse within and across the stages). Add a variable name in the form $(variablename), e.g. $(IaaSWebRG)
 <img src="images/S6_6.jpg" width="624"/>
 5. Set the location to the region of your choice.
-6. In the Template setting, select the ellipsis button and navigate to and select the virtualnetwork.azuredeploy.json file. This is being found via the linked artifacts that you configured earlier:
+6. In the Template setting, select the ellipsis button and navigate to and select the virtualnetwork.azuredeploy.json file. This is located via the linked artifacts that you configured earlier:
 <img src="images/S6_7.jpg" width="624"/>
 7. In this example there are no template parameters that need to be set so that's all that needs to be set for this task. You might want to rename the task and then save your changes:
 <img src="images/S6_8.jpg" width="624"/>
@@ -153,11 +153,11 @@ To simulate continuous deployment across multiple environments add a new stage t
 
 We may want the infrastructure deployment into production to require an approval.
 
-1. In the Pipeline view select the Production stage pre-deployment, enable Pre-deployment approvals and add the Team Project group and yourself as an example of giving a group and an individual approvals. Click the close button when done:
+1. In the Pipeline view select the Production stage pre-deployment, enable Pre-deployment approvals and add either the Team Project group and/or yourself as an example of giving either a group and/or an individual approval. Click the close button when done:
 <img src="images/S8_1.jpg" width="624"/>
 2. Save the pipeline.
 
-Now the approvers will be notified and the deployment into production will not take place until approval has been given. 
+Now the approvers will be notified (via email by default but into other tools as required such as Teams or Slack) and the deployment into production will not take place until approval has been given. 
 
 ## Step 9: Create a release
 
